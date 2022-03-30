@@ -23,10 +23,18 @@ export const Content = styled.div((props: StyledPageLayoutProps): FlattenSimpleI
 `)
 
 export const Homepage = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
+  min-height: 50vh;
+  color: ${props.theme.colours.secondary};
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: ${props.theme.spacing.fixed[10] * 3}px;
+`)
+
+export const HomepageContent = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: ${props.theme.colours.secondary};
+  transform: translateY(50%);
 `)
 
 export const Page = styled.div((): FlattenSimpleInterpolation => css`
@@ -37,8 +45,6 @@ export const Page = styled.div((): FlattenSimpleInterpolation => css`
 export const PageContent = styled.div((): FlattenSimpleInterpolation => css`
   max-width: 1000px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
   width: 100%;
 `)
 
@@ -61,6 +67,7 @@ export const ContentBody = styled.article((props: StyledPageLayoutProps): Flatte
 
 export const Avatar = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
   margin-right: ${props.theme.spacing.fixed[2]}px;
+  flex-shrink: 0;
 
   img {
     max-width: 150px;

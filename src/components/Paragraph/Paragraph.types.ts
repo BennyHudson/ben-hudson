@@ -6,4 +6,5 @@ export interface ParagraphProps {
   size?: 1 | 2 | 3
   weight?: 1 | 2 | 3
   inverse?: boolean
+  noMargin?: boolean
 }

@@ -6,7 +6,10 @@ export const Paragraph = styled.p((props: StyledParagraphProps): FlattenSimpleIn
   font-size: ${props.theme.typography.paragraph[props.size].fontSize};
   line-height: ${props.theme.typography.paragraph[props.size].lineHeight};
   font-weight: ${props.theme.typography.fontWeight[props.weight]};
-  margin-bottom: ${props.theme.spacing.fixed[2]}px;
+
+  ${!props.noMargin && css`
+    margin-bottom: ${props.theme.spacing.fixed[2]}px;
+  `}
 
   ${props.inverse && css`
     color: ${props.theme.colours.tertiary};

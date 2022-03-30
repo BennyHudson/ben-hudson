@@ -3,6 +3,8 @@ export type colorsTypeKeys =
   'red' |
   'green' |
   'orange' |
+  'yellow' |
+  'blue' |
   'primary' |
   'secondary'
 

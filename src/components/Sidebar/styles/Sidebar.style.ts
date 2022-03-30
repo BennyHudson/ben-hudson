@@ -23,16 +23,31 @@ export const Header = styled.div((props: SidebarTheme): FlattenSimpleInterpolati
   justify-content: center;
   align-items: center;
   padding: ${props.theme.spacing.fixed[4]}px;
+  border-bottom: 1px solid #ccc;
 `)
 
 export const Avatar = styled(Link)((props: SidebarTheme): FlattenSimpleInterpolation => css`
   background: ${props.theme.colours.pink};
   border-radius: 50%;
   margin-bottom: ${props.theme.spacing.fixed[2]}px;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid ${props.theme.colours.pink};
+  }
 
   img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 120px;
+    max-height: 120px;
   }
 `)
 
@@ -59,7 +74,7 @@ export const NavLink = styled(Link)((props: StyledSidebarProps): FlattenSimpleIn
   color: ${props.theme.colours.primary};
   display: block;
   position: relative;
-  text-decoration: none;
+  text-decoration: underline;
 
   &::after {
     content: '';

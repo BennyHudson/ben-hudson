@@ -7,4 +7,5 @@ export interface StyledParagraphProps {
   size: ParagraphProps['size']
   weight: ParagraphProps['weight']
   inverse: boolean
+  noMargin: boolean
 }

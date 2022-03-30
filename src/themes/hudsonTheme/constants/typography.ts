@@ -15,8 +15,8 @@ const typography = {
     3: {
       fontSizeMobile: '16px',
       lineHeightMobile: '24px',
-      fontSize: '16px',
-      lineHeight: '24px',
+      fontSize: '18px',
+      lineHeight: '26px',
     },
   },
   heading: {
@@ -29,14 +29,14 @@ const typography = {
     2: {
       fontSizeMobile: '24px',
       lineHeightMobile: '32px',
-      fontSize: '32px',
-      lineHeight: '44px',
+      fontSize: '24px',
+      lineHeight: '32px',
     },
     3: {
       fontSizeMobile: '24px',
       lineHeightMobile: '38px',
       fontSize: '36px',
-      lineHeight: '58px',
+      lineHeight: '44px',
     },
     4: {
       fontSizeMobile: '32px',
