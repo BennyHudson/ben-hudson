@@ -30,7 +30,7 @@ export const Homepage = styled.div((props: StyledPageLayoutProps): FlattenSimple
   margin-bottom: ${props.theme.spacing.fixed[10] * 3}px;
 `)
 
-export const HomepageContent = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
+export const HomepageContent = styled.div((): FlattenSimpleInterpolation => css`
   display: flex;
   align-items: center;
   justify-content: flex-start;
