@@ -1,5 +1,7 @@
-import React, { ReactElement, FC, useState } from 'react'
+import type { ReactElement, FC} from 'react'
+import React, { useState } from 'react'
 import { kebabCase } from 'lodash'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faBriefcase, faStar, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,7 +11,9 @@ import Card from './components/Card'
 
 import * as Styled from './styles/CardList.style'
 
-import { CardListProps, Milestone } from './CardList.types'
+import type { CardListProps} from './CardList.types'
+import ScrollAnimation from 'react-animate-on-scroll'
+import { useBreakpoints } from '@hooks/useBreakpoints'
 
 const CardList: FC<CardListProps> = ({
   milestones,
@@ -17,6 +21,8 @@ const CardList: FC<CardListProps> = ({
   const milestoneType = ['All', 'Life Event', 'Education', 'Career']
 
   const [activeFilter, setActiveFilter] = useState('all')
+
+  const { mdAndAbove } = useBreakpoints()
 
   const filteredMilestones = milestones.filter((milestone) => {
     if (activeFilter === 'all') {
@@ -41,11 +47,12 @@ const CardList: FC<CardListProps> = ({
   return (
     <Styled.CardList>
       <Styled.Filters>
-        <Paragraph weight={3} text='Filter By:' noMargin />
+        {mdAndAbove && <Paragraph weight={3} text='Filter By:' noMargin />}
         {
-          milestoneType.map((type) => {
+          milestoneType.map((type, index) => {
             return (
               <Styled.FilterButton
+                key={index}
                 type={kebabCase(type)}
                 onClick={() => setActiveFilter(kebabCase(type))}
                 isActive={activeFilter === kebabCase(type)}
@@ -58,9 +65,11 @@ const CardList: FC<CardListProps> = ({
         }
       </Styled.Filters>
       {
-        filteredMilestones.map((milestone) => {
+        filteredMilestones.map((milestone, index) => {
           return (
-            <Card {...milestone} />
+            <ScrollAnimation animateIn='animate__animated animate__fadeInUp' animateOnce key={index} scrollableParentSelector='#scrolly-div'>
+              <Card {...milestone} key={index} />
+            </ScrollAnimation>
           )
         })
       }

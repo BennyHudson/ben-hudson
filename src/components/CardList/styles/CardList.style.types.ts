@@ -1,6 +1,6 @@
-import { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
+import type { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
 
-import { Milestone } from '../CardList.types'
+import type { Milestone } from '../CardList.types'
 
 export interface StyledCardListProps {
   theme: Theme

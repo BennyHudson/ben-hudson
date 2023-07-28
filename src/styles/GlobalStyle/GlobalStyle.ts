@@ -1,10 +1,11 @@
+import type {
+  FlattenSimpleInterpolation} from 'styled-components'
 import {
   createGlobalStyle,
-  css,
-  FlattenSimpleInterpolation,
+  css
 } from 'styled-components'
 
-import { GlobalStyleProps } from './GlobalStyle.types'
+import type { GlobalStyleProps } from './GlobalStyle.types'
 
 const GlobalStyle = createGlobalStyle(
   (props: GlobalStyleProps): FlattenSimpleInterpolation => css`

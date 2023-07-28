@@ -1,12 +1,15 @@
-import React, { FC, ReactElement } from 'react'
+import type { FC, ReactElement } from 'react'
+import React from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faBriefcase, faStar } from '@fortawesome/free-solid-svg-icons'
 
 import Heading from '@components/Heading'
 
+import type { Milestone } from '../../CardList.types'
+
 import * as Styled from './styles/Card.style'
 
-import { Milestone } from '../../CardList.types'
 
 const Card: FC<Milestone> = ({
   type,

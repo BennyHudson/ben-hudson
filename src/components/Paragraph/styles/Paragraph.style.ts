@@ -1,6 +1,7 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import type { FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { StyledParagraphProps } from './Paragraph.style.types'
+import type { StyledParagraphProps } from './Paragraph.style.types'
 
 export const Paragraph = styled.p((props: StyledParagraphProps): FlattenSimpleInterpolation => css`
   font-size: ${props.theme.typography.paragraph[props.size].fontSize};
@@ -8,7 +9,7 @@ export const Paragraph = styled.p((props: StyledParagraphProps): FlattenSimpleIn
   font-weight: ${props.theme.typography.fontWeight[props.weight]};
 
   ${!props.noMargin && css`
-    margin-bottom: ${props.theme.spacing.fixed[2]}px;
+    margin-bottom: ${props.theme.spacing[2]}px;
   `}
 
   ${props.inverse && css`

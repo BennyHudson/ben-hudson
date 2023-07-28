@@ -1,4 +1,5 @@
-import React, { FC, ReactElement } from 'react'
+import type { FC, ReactElement } from 'react'
+import React from 'react'
 
 import CardList from '@components/CardList'
 
@@ -129,6 +130,12 @@ const IndexPage: FC = (): ReactElement => {
       title: 'Had Isla',
       location: 'Frimley, Surrey',
       time: 'February 2020'
+    },
+    {
+      type: 'life-event',
+      title: 'Moved to Fleet',
+      location: 'Fleet',
+      time: 'March 2021'
     },
     {
       type: 'career',

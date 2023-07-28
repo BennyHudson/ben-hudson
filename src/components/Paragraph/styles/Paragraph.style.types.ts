@@ -1,6 +1,6 @@
-import { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
+import type { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
 
-import { ParagraphProps } from '../Paragraph.types'
+import type { ParagraphProps } from '../Paragraph.types'
 
 export interface StyledParagraphProps {
   theme: Theme

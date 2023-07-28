@@ -1,6 +1,6 @@
-import { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
+import type { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
 
-import { HeadingProps } from '../Heading.types'
+import type { HeadingProps } from '../Heading.types'
 
 export interface StyledHeadingProps {
   theme: Theme

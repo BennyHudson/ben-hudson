@@ -1,6 +1,8 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import type { FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { StyledHeadingProps } from './Heading.style.types'
+import type { StyledHeadingProps } from './Heading.style.types'
+import respondTo from '@mixins/respondTo'
 
 export const Heading = styled.h2((props: StyledHeadingProps): FlattenSimpleInterpolation => css`
   font-size: ${props.theme.typography.heading[props.size].fontSizeMobile};
@@ -15,16 +17,16 @@ export const Heading = styled.h2((props: StyledHeadingProps): FlattenSimpleInter
     font-weight: 700;
   `}
 
-  ${props.theme.mixins.respondTo.md(css`
+  ${respondTo.md(css`
     font-size: ${props.theme.typography.heading[props.size].fontSize};
     line-height: ${props.theme.typography.heading[props.size].lineHeight};
   `)}
 
   ${!props.noMargin && css`
-    margin-bottom: ${props.theme.spacing.fixed[2]}px;
+    margin-bottom: ${props.theme.spacing[2]}px;
 
     ${props.size > 4 && css`
-      margin-bottom: ${props.theme.spacing.fixed[8]}px;
+      margin-bottom: ${props.theme.spacing[8]}px;
     `}
   `}
 

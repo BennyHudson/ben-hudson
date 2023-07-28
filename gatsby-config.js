@@ -49,5 +49,14 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Raleway:ital,wght@0,100;0,200;0,300;0,600;1,200;1,300;1,600' // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
   ],
 };

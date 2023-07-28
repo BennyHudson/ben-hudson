@@ -5,8 +5,7 @@
       {
         "legacy": true
       }
-    ],
-    "jsx-control-statements"
+    ]
   ],
   "presets": [
     [

@@ -1,4 +1,5 @@
-import React, { FC, ReactElement } from 'react'
+import type { FC, ReactElement } from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import dayjs from 'dayjs'
 
@@ -16,51 +17,54 @@ const Sidebar: FC = (): ReactElement => {
       name: 'Skills & Technology',
       children: [
         {
-          name:'JavaScript',
+          name: 'JavaScript',
         },
         {
-          name:'TypeScript',
+          name: 'TypeScript',
         },
         {
-          name:'CSS',
+          name: 'CSS',
         },
         {
-          name:'Design Systems',
+          name: 'Design Systems',
         },
         {
-          name:'Accessibility',
+          name: 'Accessibility',
         },
         {
-          name:'Component Architecture',
+          name: 'Component Architecture',
         },
         {
-          name:'React',
+          name: 'React',
         },
         {
-          name:'Gatsby',
+          name: 'Gatsby',
         },
         {
-          name:'WordPress',
+          name: 'Next',
+        },
+        {
+          name: 'WordPress',
         },
       ],
     },
-    {
-      name: 'Notable Projects',
-      children: [
-        {
-          name: 'Purcy Chair',
-          url: 'https://purcychair.com/',
-        },
-        {
-          name: 'SocialBuff',
-          url: 'https://socialbuff.com/',
-        },
-        {
-          name: 'wedo.digital',
-          url: 'https://www.wedo.digital/',
-        }
-      ]
-    },
+    // {
+    //   name: 'Notable Projects',
+    //   children: [
+    //     {
+    //       name: 'Purcy Chair',
+    //       url: 'https://purcychair.com/',
+    //     },
+    //     {
+    //       name: 'SocialBuff',
+    //       url: 'https://socialbuff.com/',
+    //     },
+    //     {
+    //       name: 'wedo.digital',
+    //       url: 'https://www.wedo.digital/',
+    //     }
+    //   ]
+    // },
     {
       name: 'Interests',
       children: [
@@ -149,27 +153,26 @@ const Sidebar: FC = (): ReactElement => {
         <Heading text='Front End Developer' size={1} />
       </Styled.Header>
       {
-        sidebarContent.map((navItem) => {
+        sidebarContent.map((navItem, i) => {
           return (
-            <Styled.NavBlock>
+            <Styled.NavBlock key={i}>
               <Heading size={1} weight={2} text={navItem.name} />
               <ul>
                 {
-                  navItem.children.map((subNavItem) => {
+                  navItem.children.map((subNavItem, index) => {
                     return (
-                      <li>
-                        <Choose>
-                          <When condition={subNavItem.url}>
-                            <Styled.NavLink
-                              href={subNavItem.url}
-                            >
-                              {subNavItem.name}
-                            </Styled.NavLink>
-                          </When>
-                          <Otherwise>
+                      <li key={index}>
+                        {subNavItem.url ?
+                          <Styled.NavLink
+                            href={subNavItem.url}
+                          >
                             {subNavItem.name}
-                          </Otherwise>
-                        </Choose>
+                          </Styled.NavLink>
+                          :
+                          <>
+                            {subNavItem.name}
+                          </>
+                        }
                       </li>
                     )
                   })

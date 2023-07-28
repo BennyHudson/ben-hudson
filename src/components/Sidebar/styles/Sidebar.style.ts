@@ -1,7 +1,8 @@
-import styled, { FlattenSimpleInterpolation, css } from 'styled-components'
+import type { FlattenSimpleInterpolation} from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
-import { StyledSidebarProps } from './Sidebar.style.types'
+import type { StyledSidebarProps } from './Sidebar.style.types'
 
 type SidebarTheme = Pick<StyledSidebarProps, 'theme'>
 
@@ -22,14 +23,14 @@ export const Header = styled.div((props: SidebarTheme): FlattenSimpleInterpolati
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: ${props.theme.spacing.fixed[4]}px;
+  padding: ${props.theme.spacing[4]}px;
   border-bottom: 1px solid #ccc;
 `)
 
 export const Avatar = styled(Link)((props: SidebarTheme): FlattenSimpleInterpolation => css`
   background: ${props.theme.colours.pink};
   border-radius: 50%;
-  margin-bottom: ${props.theme.spacing.fixed[2]}px;
+  margin-bottom: ${props.theme.spacing[2]}px;
   position: relative;
 
   &::after {
@@ -52,12 +53,12 @@ export const Avatar = styled(Link)((props: SidebarTheme): FlattenSimpleInterpola
 `)
 
 export const NavBlock = styled.div((props: SidebarTheme): FlattenSimpleInterpolation => css`
-  margin: 0 ${props.theme.spacing.fixed[2]}px;
-  padding: ${props.theme.spacing.fixed[2]}px;
+  margin: 0 ${props.theme.spacing[2]}px;
+  padding: ${props.theme.spacing[2]}px;
   border-bottom: 1px solid ${props.theme.colours.pink};
 
   li {
-    margin-bottom: ${props.theme.spacing.fixed[1]}px;
+    margin-bottom: ${props.theme.spacing[1]}px;
 
     &:last-child {
       margin-bottom: 0;
@@ -65,7 +66,7 @@ export const NavBlock = styled.div((props: SidebarTheme): FlattenSimpleInterpola
   }
 
   &:last-child {
-    margin-bottom: ${props.theme.spacing.fixed[4]}px;
+    margin-bottom: ${props.theme.spacing[4]}px;
     border-bottom: none;
   }
 `)
@@ -110,7 +111,7 @@ export const Filters = styled.div((props: StyledSidebarProps): FlattenSimpleInte
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${props.theme.spacing.fixed[2]}px ${props.theme.spacing.fixed[4]}px;
+  padding: ${props.theme.spacing[2]}px ${props.theme.spacing[4]}px;
   background: #ededed;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -121,8 +122,8 @@ export const FilterButton = styled.button((props: StyledSidebarProps): FlattenSi
   position: relative;
   border: 2px solid ${props.theme.colours.pink};
   border-radius: 40px;
-  padding: ${props.theme.spacing.fixed[1] / 2}px ${props.theme.spacing.fixed[1]}px;
-  margin-right: ${props.theme.spacing.fixed[1]}px;
+  padding: ${props.theme.spacing[1] / 2}px ${props.theme.spacing[1]}px;
+  margin-right: ${props.theme.spacing[1]}px;
   cursor: pointer;
   font-weight: 600;
 
@@ -136,7 +137,7 @@ export const FilterButton = styled.button((props: StyledSidebarProps): FlattenSi
   }
 
   ${props.level && css`
-    padding-right: calc(${props.theme.spacing.fixed[1] * 2}px + 12px);
+    padding-right: calc(${props.theme.spacing[1] * 2}px + 12px);
 
     ${props.level === 1 && css`
       border-color: ${props.theme.colours.red};
@@ -168,7 +169,7 @@ export const FilterButton = styled.button((props: StyledSidebarProps): FlattenSi
       width: 10px;
       height: 10px;
       position: absolute;
-      right: ${props.theme.spacing.fixed[1]}px;
+      right: ${props.theme.spacing[1]}px;
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;

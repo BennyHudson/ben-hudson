@@ -1,4 +1,4 @@
-import { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
+import type { Theme } from '@themes/hudsonTheme/hudsonTheme.types'
 
 export interface StyledPageLayoutProps {
   theme: Theme
