@@ -25,7 +25,7 @@ export const Content = styled.div((props: StyledPageLayoutProps): FlattenSimpleI
 `)
 
 export const Homepage = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
-  margin-bottom: ${props.theme.spacing[8]}px;
+  padding: ${props.theme.spacing[8]}px 0;
   color: ${props.theme.colours.secondary};
 
   ${respondTo.md(css`
@@ -36,11 +36,12 @@ export const Homepage = styled.div((props: StyledPageLayoutProps): FlattenSimple
   `)}
 `)
 
-export const HomepageContent = styled.div((): FlattenSimpleInterpolation => css`
+export const HomepageContent = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  gap: ${props.theme.spacing[4]}px;
 
   ${respondTo.md(css`
     flex-direction: row;
@@ -56,7 +57,7 @@ export const Page = styled.div((): FlattenSimpleInterpolation => css`
 `)
 
 export const PageContent = styled.div((): FlattenSimpleInterpolation => css`
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
   min-height: 100dvh;
@@ -82,11 +83,14 @@ export const ContentBody = styled.article((props: StyledPageLayoutProps): Flatte
 export const Avatar = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`
   margin-right: ${props.theme.spacing[2]}px;
   flex-shrink: 0;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
 
-  img {
-    max-width: 150px;
-    max-height: 150px;
-  }
+  ${respondTo.md(css`
+      max-width: 150px;
+      max-height: 150px;
+  `)}
 `)
 
 export const Level = styled.div((props: StyledPageLayoutProps): FlattenSimpleInterpolation => css`

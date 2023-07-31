@@ -9,8 +9,13 @@ export const CardList = styled.div((props: StyledCardListProps): FlattenSimpleIn
   flex-direction: column;
   max-width: 900px;
   margin: 0 auto;
-  gap: ${props.theme.spacing[4]}px;
-  padding-bottom: ${props.theme.spacing[10]}px;
+  gap: ${props.theme.spacing[2]}px;
+  padding-bottom: ${props.theme.spacing[6]}px;
+
+  ${respondTo.md(css`
+    gap: ${props.theme.spacing[4]}px;
+    padding-bottom: ${props.theme.spacing[10]}px;
+  `)}
 `)
 
 export const Filters = styled.div((props: StyledCardListProps): FlattenSimpleInterpolation => css`
