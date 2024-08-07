@@ -98,7 +98,7 @@ const Sidebar: FC = (): ReactElement => {
           name: 'Fleet, Hampshire',
         },
         {
-          name: 'One daughter',
+          name: 'Two daughters',
         },
         {
           name: 'One wife',

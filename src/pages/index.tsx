@@ -143,6 +143,12 @@ const IndexPage: FC = (): ReactElement => {
       location: 'London',
       time: 'March 2022'
     },
+    {
+      type: 'life-event',
+      title: 'Had Ruby',
+      location: 'Frimley, Surrey',
+      time: 'August 2023'
+    },
   ]
 
   return (
