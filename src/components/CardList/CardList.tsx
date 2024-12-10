@@ -2,18 +2,20 @@ import type { ReactElement, FC} from 'react'
 import React, { useState } from 'react'
 import { kebabCase } from 'lodash'
 
+import ScrollAnimation from 'react-animate-on-scroll'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faBriefcase, faStar, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 import Paragraph from '@components/Paragraph'
+
+import { useBreakpoints } from '@hooks/useBreakpoints'
 
 import Card from './components/Card'
 
 import * as Styled from './styles/CardList.style'
 
 import type { CardListProps} from './CardList.types'
-import ScrollAnimation from 'react-animate-on-scroll'
-import { useBreakpoints } from '@hooks/useBreakpoints'
 
 const CardList: FC<CardListProps> = ({
   milestones,

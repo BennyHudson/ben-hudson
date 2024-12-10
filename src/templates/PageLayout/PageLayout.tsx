@@ -12,10 +12,11 @@ import Heading from '@components/Heading'
 import HeadTags from '@components/HeadTags'
 import MatchMedia from '@components/MatchMedia'
 
+// import Footer from '@components/Footer'
+
 import * as Styled from './styles/PageLayout.style'
 
 import type { PageLayoutProps, PageLayoutState } from './PageLayout.types'
-import Footer from '@components/Footer'
 
 class PageLayout extends PureComponent<PageLayoutProps, PageLayoutState> {
   render(): ReactNode {
@@ -48,7 +49,7 @@ class PageLayout extends PureComponent<PageLayoutProps, PageLayoutState> {
               <div>
                 {this.props.children}
               </div>
-              <Footer />
+              {/* <Footer /> */}
             </Styled.PageContent>
           </Styled.Content>
         </Styled.PageLayout>
