@@ -119,8 +119,8 @@ const Sidebar: FC = (): ReactElement => {
           url: 'mailto:ben@wedo.digital',
         },
         {
-          name: 'Twitter',
-          url: 'https://twitter.com/BennyHudson',
+          name: 'BlueSky',
+          url: 'https://bennyhudson.bsky.social',
         },
         {
           name: 'Instagram',
